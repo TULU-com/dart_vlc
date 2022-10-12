@@ -16,7 +16,7 @@
 #  along with this program; if not, write to the Free Software Foundation,
 #  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-cmake_minimum_required(VERSION 3.10.2)
+cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)
 
 set(PROJECT_NAME "dart_vlc")
@@ -53,7 +53,7 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
   dart_vlc_core
 )
 
-target_link_options(${PLUGIN_NAME}
+target_link_libraries(${PLUGIN_NAME}
   PRIVATE -Wl,--whole-archive $<TARGET_FILE:dart_vlc_core> -Wl,--no-whole-archive
 )
 
